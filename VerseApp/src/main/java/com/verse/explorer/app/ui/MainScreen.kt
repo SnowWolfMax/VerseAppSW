@@ -46,6 +46,7 @@ sealed class Screen(
     object Shaders : Screen("shaders", "光影", Icons.Outlined.Flare, Icons.Filled.Flare)
     object Lan : Screen("lan", "联机", Icons.Outlined.Wifi, Icons.Filled.Wifi)
     object Transfer : Screen("transfer", "传输", Icons.Outlined.SwapHoriz, Icons.Filled.SwapHoriz)
+    object Cloud : Screen("cloud", "云盘", Icons.Outlined.Cloud, Icons.Filled.Cloud)
     object Accounts : Screen("accounts", "账户", Icons.Outlined.Person, Icons.Filled.Person)
     object Settings : Screen("settings", "设置", Icons.Outlined.Settings, Icons.Filled.Settings)
     object Java : Screen("java", "Java", Icons.Outlined.Code, Icons.Filled.Code)
@@ -71,6 +72,7 @@ internal val mainNavItems = listOf(
     ),
     NavItem(screen = Screen.Lan, icon = Icons.Outlined.Wifi, label = "联机"),
     NavItem(screen = Screen.Transfer, icon = Icons.Outlined.SwapHoriz, label = "传输"),
+    NavItem(screen = Screen.Cloud, icon = Icons.Outlined.Cloud, label = "云盘"),
     NavItem(screen = Screen.Accounts, icon = Icons.Outlined.Person, label = "账户"),
     NavItem(screen = Screen.Settings, icon = Icons.Outlined.Settings, label = "设置")
 )
@@ -229,6 +231,7 @@ fun MainScreen(
             composable(Screen.Accounts.route) { AccountsScreen(navController) }
             composable(Screen.Lan.route) { LanScreen(navController) }
             composable(Screen.Transfer.route) { TransferScreen() }
+            composable(Screen.Cloud.route) { CloudScreen() }
             composable(Screen.Java.route) { JavaScreen(navController) }
             composable(Screen.Console.route) { ConsoleScreen(navController) }
             composable("installed_versions") {
